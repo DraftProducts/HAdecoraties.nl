@@ -1,31 +1,14 @@
-# Adonis fullstack application
+# HAdecoraties
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+## A Propos
+HAdecoraties.nl est le site d'une crée en 2016 réalisant des coussins,lampes et autres décorations d'interieur & exterieur. 
+Pour celà j'ai choisi de partir sur le Framework [AdonisJs](https://adonisjs.com) qui est un framework web basé sur du nodejs fonctionnant avec la structure [MVC](https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur).
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+## Installation
+- Executer `git clone https://github.com/DraftProducts/HAdecoraties.git` pour télécharger le projet
+- Executez `cd HAdecoraties.fr/` pour vous rendre dans le dossier du projet
+- Executer `npm install` pour installer toutes les dependances
+- Dupliquer le fichier `.env.exemple` en `.env`
+- Executer `adonis key:generate` pour ajouter la clé dans le fichier `.env`
+- Executer `adonis migration:run` pour mettre en place la base de donnée
+- Executer `adonis serve --dev` ou `node server.js` pour lancer l'application
