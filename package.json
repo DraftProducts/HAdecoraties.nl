@@ -25,7 +25,8 @@
     "@adonisjs/ignitor": "^2.0.6",
     "@adonisjs/lucid": "^5.0.4",
     "@adonisjs/session": "^1.0.25",
-    "@adonisjs/shield": "^1.0.6"
+    "@adonisjs/shield": "^1.0.6",
+    "snekfetch": "^4.0.4"
   },
   "devDependencies": {},
   "autoload": {
