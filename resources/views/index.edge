@@ -99,13 +99,28 @@
         <a href=""><i></i><span>+33 1 56 45 54 44</span></a>
         <a href=""><i></i><span>facebook.com/HAdecoraties</span></a>
       </div>
-      <form action="" method="post" class="part">
-        <input type="text" placeholder="Naam">
-        <input type="email" placeholder="Email">
-        <input type="tel" placeholder="Telefoon">
+      <form action="{{ route('HomeController.mail') }}" method="post" class="part">
+        <input type="text" name="name" placeholder="Naam">
+        {{ elIf('<div class="error-card">$self</div>', getErrorFor('name'), hasErrorFor('name')) }}
+        <input type="email" name="email" placeholder="Email">
+        {{ elIf('<div class="error-card">$self</div>', getErrorFor('email'), hasErrorFor('email')) }}
+        <input type="tel" name="tel" placeholder="Telefoon">
+        {{ elIf('<div class="error-card">$self</div>', getErrorFor('tel'), hasErrorFor('tel')) }}
         <textarea name="message" placeholder="Mjn vraag"></textarea>
+        {{ elIf('<div class="error-card">$self</div>', getErrorFor('message'), hasErrorFor('message')) }}
+        {{ csrfField() }}
         <input type="submit" value="Sturen">
       </form>
+    </div>
+  </section>
+  <section id="copyright">
+    <div class="content">
+      <p>Copyright 2018 © - All rights reserved - Made by <a href="https://www.draftman.fr"></a></p>
+      <div class="icons">
+        <span>#</span>
+        <span>#</span>
+        <span>#</span>
+      </div>
     </div>
   </section>
 </body>
