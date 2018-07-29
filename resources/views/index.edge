@@ -6,25 +6,29 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rouge+Script" rel="stylesheet">
   {{ style('css/style') }}
 </head>
-<body>
-  <header>
+<body id="page">
+  <header id="home">
   <div class="content">
       <img src="images/logo.jpg" alt="HAdecoraties">
-      <nav>
-        <a href="">Home</a>
-        <a href="">Welkom</a>
-        <a href="">Producten</a>
-        <a href="">Contact</a>
+      <nav id="nav">
+        <a href="#home" class="slideTo">Home</a>
+        <a href="#welkom" class="slideTo">Welkom</a>
+        <a href="#producten" class="slideTo">Producten</a>
+        <a href="#contact" class="slideTo">Contact</a>
         <span class="clearfix"></span>
-        <a class="icon" href="">icon</a>
-        <a class="icon" href="">icon</a>
+        <a class="icon-facebook" href="https://facebook.com/HAdecoraties"></a>
+        <a class="icon-pinterest" href="https://pinterest.com/HAdecoraties"></a>
+        <a class="icon-whatsapp" href="tel:+33 6 45 24 13 66"></a>
       </nav>
+      <div id="mobile-nav-button"></div>
     </div>
   </header>
+  <div id="bounce"></div>
+  <div id="cache"></div>
   <section id="banner">
-    <div class="bottom-slide"></div>
+    <div id="bottom-slide" class="active"></div>
   </section>
-  <section id="production">
+  <section id="producten">
     <h2 class="title">Producten</h2>
     <div class="products">
       <div class="item">
@@ -93,11 +97,11 @@
     <h2 class="title">Contact</h2>
     <div class="content">
       <div class="part">
-        <a href=""><i></i><span>+33 1 56 45 54 44</span></a>
-        <a href=""><i></i><span>hadecoraties@gmail.com</span></a>
-        <a href=""><i></i><span>pinterest.com/HAdecoraties</span></a>
-        <a href=""><i></i><span>+33 1 56 45 54 44</span></a>
-        <a href=""><i></i><span>facebook.com/HAdecoraties</span></a>
+        <a href="tel:+33 6 45 24 13 66"><i class="icon-phone"></i><span>+33 6 45 24 13 66</span></a>
+        <a href="mailto:hadecoraties@gmail.com"><i class="icon-mail"></i><span>hadecoraties@gmail.com</span></a>
+        <a href="https://pinterest.com/HAdecoraties"><i class="icon-pinterest"></i><span>pinterest.com/HAdecoraties</span></a>
+        <a href="tel:+33 6 45 24 13 66"><i class="icon-whatsapp"></i><span>+33 6 45 24 13 66</span></a>
+        <a href="https://facebook.com/HAdecoraties"><i class="icon-facebook"></i><span>facebook.com/HAdecoraties</span></a>
       </div>
       <form action="{{ route('HomeController.mail') }}" method="post" class="part">
         <input type="text" name="name" placeholder="Naam">
@@ -115,13 +119,14 @@
   </section>
   <section id="copyright">
     <div class="content">
-      <p>Copyright 2018 © - All rights reserved - Made by <a href="https://www.draftman.fr"></a></p>
+      <p>Copyright 2018 © - All rights reserved - Made by <a href="https://www.draftman.fr">DraftMan</a></p>
       <div class="icons">
-        <span>#</span>
-        <span>#</span>
-        <span>#</span>
+        <a href="https://facebook.com/HAdecoraties" class="icon-facebook"></a>
+        <a href="https://pinterest.com/HAdecoraties" class="icon-pinterest"></a>
+        <a href="tel:+33 6 45 24 13 66" class="icon-whatsapp"></a>
       </div>
     </div>
   </section>
+  {{script('js/app')}}
 </body>
 </html>
