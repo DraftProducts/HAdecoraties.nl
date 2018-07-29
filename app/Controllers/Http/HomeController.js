@@ -31,15 +31,15 @@ class HomeController {
             return response.redirect('back')
         }
     
-        const email_to = 'contact@draftman.fr';
+        const email_to = 'hadecoraties@gmail.com';
         const data = request.only(['email','name','tel','message'])
     
         await Mail.send('mails/contact', data, (message) => {
           message
             .to(email_to)
             .from('<email>', '<name>')
-            .subject('<objet>')
-            .replyTo('<email>', '<author>')
+            .subject('Email van HAdecoraties.nl')
+            .replyTo('<email>', '<name>')
         })
     }
 }
