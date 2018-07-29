@@ -1,7 +1,22 @@
 'use strict'
 
+const { get, post } = require('snekfetch');
+const album = '694485600890626'
+const appId = '1862844164021508'
+const appSecret = 'f5c8d3957b08592c5ef985d90e1ab733'
+
 class HomeController {
     async index({ view }){
+        //https://graph.facebook.com/694485600890626?fields=photos{link}&access_token=EAADrnh9xgQ8BAOWQ837n6ZBkSSMtfYBZC6sfSYiZCu4ogJ6FpOYIJPtbZCpFUntcrbjrrB7H1SKAwVGrde3ZBGsBVb5ZAhnFufCTUyvQZCvv7hROMqawUr3O49189EWxg1WxcQ2klJMrBPRt9H92cIMGl2PZA8r5eYubl7UTkcGGnysRZC0KZChEnV5ZCWxWZA3ttOftS9oBxztPgQZDZD
+        
+        get(`https://graph.facebook.com/oauth/access_token?client_id=${appId}&client_secret=${appSecret}&grant_type=client_credentials`)
+        .then(res => {
+            return get(`https://graph.facebook.com/${album}?fields=photos{link}&access_token=${res.body.access_token}`)
+            .then(response => 
+              console.log(response)
+            )
+        })
+        
         return view.render('index')
     }
 
