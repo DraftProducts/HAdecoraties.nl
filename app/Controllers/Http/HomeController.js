@@ -11,13 +11,12 @@ class HomeController {
         
         get(`https://graph.facebook.com/oauth/access_token?client_id=${appId}&client_secret=${appSecret}&grant_type=client_credentials`)
         .then(res => {
-            return get(`https://graph.facebook.com/${album}?fields=photos{link}&access_token=${res.body.access_token}`)
-            .then(response => 
-              console.log(response)
-            )
+            return get(`https://graph.facebook.com/${album}/photos?fields=link&access_token=${res.body.access_token}`)
+            .then(response => {
+                const links = JSON.parse(response.body.toString('utf8'))
+                view.render('index', {links}) 
+            })
         })
-        
-        return view.render('index')
     }
 
     async mail ({ request, session, response }) {
