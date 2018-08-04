@@ -21,7 +21,6 @@ document.getElementById('bottom-slide').addEventListener('click', () => {
 });
 
 [...document.getElementsByClassName('slideTo')].forEach((element) => {
-    console.log(element.getAttribute('href'))
     element.addEventListener('click', (e) => {
         e.preventDefault()
         window.scroll({
@@ -32,6 +31,16 @@ document.getElementById('bottom-slide').addEventListener('click', () => {
     });
 });
 
-  
+window.addEventListener('DOMContentLoaded', function () {
+    const products = document.getElementById('products')
+    const viewer = new Viewer(products,{
+        url: 'data-viewer',
+        title: false,
+        toolbar: false,
+        rotatable: false,
+        scalable: false
+    });
+})
+
   
 
