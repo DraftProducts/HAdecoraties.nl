@@ -117,7 +117,7 @@ header nav a.icon{
     text-align: center;
     margin-bottom: 20px;
 }
-#producten .products{
+#producten #products{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -126,37 +126,55 @@ header nav a.icon{
     margin: 0 30px;
 }
 
-#producten .products .item{
+#producten #products .item{
     width: 25%;
     padding: 10px;
     float: left;
 }
 
-#producten .products .item .content{
+#producten #products .item .content{
     height: 180px;
-    background-color: #C4C4C4;
+    background-size: cover;
+    background-position: center;
     position: relative;
     transition: all 0.6s;
 }
 
-#producten .products .item:hover .content{
+#producten #products .item img{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+#producten #products .item:hover .content{
     transform: scale(1.02);
     box-shadow: 0 0 10px #e7e7e7fd
 }
 
-#producten .products .item .content .button{
+#producten #products .item .content .button{
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 60px;
+    height: 60px;
     border-bottom: 60px solid #E67999;
     border-left: 60px solid transparent;
     transition: all 0.3s ease-in-out;
     border-top-left-radius: 100%;
 }
 
-#producten .products .item .content .button:hover{
+#producten #products .item .content .button:hover,#producten #products .item .content img:hover + .button{
     border-bottom: 70px solid #E67999;
 	border-left: 70px solid transparent;
+}
+
+#producten #products .item .content img:hover + div + i:before{
+    bottom: 12px;
+    right: 14px;
 }
 
 #contact{
@@ -200,11 +218,17 @@ header nav a.icon{
 
 #contact form input,#contact form textarea{
     padding: 13px 20px;
-    margin-bottom: 10px;
+    margin: 5px 0;
     width: 100%;
     border-radius: 5px;
     border: none;
     font-size: 16px
+}
+
+#contact .error-card{
+    color: #E67999;
+    text-align: center;
+    margin: 5px 0;
 }
 
 #contact form textarea{
@@ -402,6 +426,13 @@ header nav a.icon{
 
 .icon-info:before {
     content: "\e900";
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 25px;
+    z-index: 1;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
 }
 .icon-mail:before {
     content: "\e901";
