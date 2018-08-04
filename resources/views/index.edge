@@ -5,6 +5,7 @@
   <title>HAdecoracies</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rouge+Script" rel="stylesheet">
   {{ style('css/style') }}
+  {{ style('css/viewer.min.css') }}
 </head>
 <body id="page">
   <header id="home">
@@ -30,27 +31,16 @@
   </section>
   <section id="producten">
     <h2 class="title">Producten</h2>
-    zef
-    <div class="products">
-      tst {{links}}
-      @each(link in links.link)
-        link :{{link.link}}
+    <div id="products">
+      @each(image in producten.data)
+      <div class="item">
+          <div class="content" style="background-image: url({{image.images[2].source}})">
+              <img data-viewer="{{image.images[0].source}}" src="{{image.images[0].source}}">
+              <div class="button"></div>
+              <i class="icon-info"></i>
+          </div>
+      </div>
       @endeach
-      <div class="item">
-        <div class="content">
-          <div class="button"></div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="content">
-          <div class="button"></div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="content">
-          <div class="button"></div>
-        </div>
-      </div>
     </div>
   </section>
   <section id="contact">
@@ -87,6 +77,7 @@
       </div>
     </div>
   </section>
+  {{script('js/viewer.min.js')}}
   {{script('js/app')}}
 </body>
 </html>
