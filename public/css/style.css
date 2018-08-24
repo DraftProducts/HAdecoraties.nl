@@ -288,6 +288,12 @@ header nav a.icon{
     }
 }
 
+@media only screen and (max-width:780px) {
+  header nav a[class^="icon-"]{
+    display: none;
+  }
+}
+
 @media only screen and (max-width:480px) {
     header {
         z-index: 1001;
@@ -376,6 +382,9 @@ header nav a.icon{
         flex-direction: column;
     }
 
+    #contact .content>div{
+        margin: 0 auto;
+    }
     #copyright .icons,header nav .clearfix,header nav a[class^="icon-"]{
         display: none
     }
@@ -384,7 +393,7 @@ header nav a.icon{
         padding: 80px 0;
     }
 
-    #producten .products .item{
+    #producten #products .item{
         width: 100%;
     }
 
