@@ -26,7 +26,10 @@ header .content{
 header img{
     height: 100%;
 }
-
+header nav{
+  display: flex;
+    align-items: center;
+}
 header nav a{
     text-decoration: none;
     color: white;
